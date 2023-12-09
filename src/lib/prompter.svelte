@@ -2,7 +2,7 @@
 </script>
 
 <section id="prompter">
-  <input type="text" placeholder="Enter prompt here..." />
+  <input type="text" placeholder="Enter custom prompt here..." />
   <button>Generate</button>
 </section>
 
@@ -17,8 +17,12 @@
   }
 
   input {
-    padding: 0.5em;
+    padding: 0.5em 1em 0.5em 1em;
     margin: 0.5em;
+    border-radius: 1em;
+    height: 2em;
+    border: none;
+    outline: none;
   }
 
   button {

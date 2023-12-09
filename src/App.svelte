@@ -6,7 +6,7 @@
 </script>
 
 <main>
-  <section id="app">
+  <section id="container">
     <div id="grid-item">
       <Options />
     </div>
@@ -28,7 +28,14 @@
 </main>
 
 <style>
-  #app {
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+  }
+
+  #container {
     border: 1px solid grey;
     border-radius: 20px;
     height: 90vh;
