@@ -6,10 +6,9 @@
 </script>
 
 <main>
-  <section class="app">
+  <section id="app">
     <div id="grid-item">
       <Options />
-      <hr />
     </div>
 
     <div id="grid-item" class="display">
@@ -23,14 +22,13 @@
     </div>
 
     <div id="grid-item">
-      <hr />
       <Prompter />
     </div>
   </section>
 </main>
 
 <style>
-  .app {
+  #app {
     border: 1px solid grey;
     border-radius: 20px;
     height: 90vh;
