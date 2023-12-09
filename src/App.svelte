@@ -1,62 +1,46 @@
 <script>
-  let blogContent = "Oops, looks like there's nothing to see here...";
-
-  async function handleSubmit(event) {
-    const formData = new FormData(event.target);
-    const prompt = formData.get("prompt");
-
-    try {
-      const response = await fetch("http://localhost:8000/generate_blog", {
-        method: "POST",
-        body: prompt,
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        blogContent = data.blog_content; // Update blogContent variable with new content
-      } else {
-        console.error("Failed to generate blog content");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  }
+  import Options from "./lib/options.svelte";
+  import Preview from "./lib/preview.svelte";
+  import History from "./lib/history.svelte";
+  import Prompter from "./lib/prompter.svelte";
 </script>
 
 <main>
-  <section id="app">
-    <div id="display">
-      <p>{blogContent}</p>
+  <section class="app">
+    <div id="grid-item">
+      <Options />
+      <hr />
     </div>
-    <div id="prompter">
-      <form on:submit|preventDefault={handleSubmit}>
-        <input type="text" name="prompt" id="prompt" />
-        <button type="submit">Submit</button>
-      </form>
+
+    <div id="grid-item" class="display">
+      <div id="grid-item">
+        <Preview />
+      </div>
+
+      <div id="grid-item">
+        <History />
+      </div>
+    </div>
+
+    <div id="grid-item">
+      <hr />
+      <Prompter />
     </div>
   </section>
 </main>
 
 <style>
-  #app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #display {
-    height: 500px;
-    width: 500px;
-    border: solid 1px white;
+  .app {
+    border: 1px solid grey;
     border-radius: 20px;
-    margin-bottom: 2rem;
+    height: 90vh;
+    width: 80vw;
+    display: grid;
+    grid-template-rows: 1fr 8fr 1fr;
   }
 
-  #prompt {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  .display {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
   }
 </style>
