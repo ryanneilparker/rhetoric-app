@@ -1,17 +1,17 @@
 <script>
   export let options = [];
-  export let display_func = (a) => a;
+  export let display_func = (o) => o.text;
   export let label = "";
-  export let index = null;
-  export let value;
+  export let selectedValue = null;
 
-  $: {
-    value = options[index];
+  function handleChange(event) {
+    const selectedIndex = event.target.value;
+    selectedValue = selectedIndex !== null ? parseInt(selectedIndex, 10) : null;
   }
 </script>
 
-<select bind:value={index}>
-  <option value={null} disabled selected hidden>{label}</option>
+<select bind:value={selectedValue} on:change={handleChange}>
+  <option value={null} disabled hidden>{label}</option>
   {#each options as option, i}
     <option value={i}>{display_func(option)}</option>
   {/each}

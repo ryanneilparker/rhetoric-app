@@ -1,10 +1,5 @@
 <script>
   import Select from "./components/select.svelte";
-  let tone;
-  let structure;
-  let style;
-  let voice;
-  let audiencePurpose;
 
   const toneOptions = [
     { text: "Casual" },
@@ -30,8 +25,9 @@
     { text: "Educational" },
   ];
 
-  const audiencePurposeOptions = [
-    { text: "Educational/Instructional" },
+  const purposeOptions = [
+    { text: "Educational" },
+    { text: "Instructional" },
     { text: "Entertainment" },
     { text: "Thought Leadership" },
   ];
@@ -43,12 +39,7 @@
   </div>
 
   <div class="grid-item">
-    <Select
-      options={toneOptions}
-      display_func={(o) => o.text}
-      label="Tone"
-      bind:value={tone}
-    />
+    <Select options={toneOptions} display_func={(o) => o.text} label="Tone" />
   </div>
 
   <div class="grid-item">
@@ -56,34 +47,22 @@
       options={structureOptions}
       display_func={(o) => o.text}
       label="Structure"
-      bind:value={structure}
     />
   </div>
 
   <div class="grid-item">
-    <Select
-      options={styleOptions}
-      display_func={(o) => o.text}
-      label="Style"
-      bind:value={style}
-    />
+    <Select options={styleOptions} display_func={(o) => o.text} label="Style" />
+  </div>
+
+  <div class="grid-item">
+    <Select options={voiceOptions} display_func={(o) => o.text} label="Voice" />
   </div>
 
   <div class="grid-item">
     <Select
-      options={voiceOptions}
-      display_func={(o) => o.text}
-      label="Voice"
-      bind:value={voice}
-    />
-  </div>
-
-  <div class="grid-item">
-    <Select
-      options={audiencePurposeOptions}
+      options={purposeOptions}
       display_func={(o) => o.text}
       label="Purpose"
-      bind:value={audiencePurpose}
     />
   </div>
 </section>
