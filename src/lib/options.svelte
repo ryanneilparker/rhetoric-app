@@ -43,46 +43,46 @@
   </div>
 
   <div class="grid-item">
-    <label for="tone">Tone:</label>
     <Select
       options={toneOptions}
       display_func={(o) => o.text}
+      label="Tone"
       bind:value={tone}
     />
   </div>
 
   <div class="grid-item">
-    <label for="structure">Structure:</label>
     <Select
       options={structureOptions}
       display_func={(o) => o.text}
+      label="Structure"
       bind:value={structure}
     />
   </div>
 
   <div class="grid-item">
-    <label for="style">Style:</label>
     <Select
       options={styleOptions}
       display_func={(o) => o.text}
+      label="Style"
       bind:value={style}
     />
   </div>
 
   <div class="grid-item">
-    <label for="voice">Voice:</label>
     <Select
       options={voiceOptions}
       display_func={(o) => o.text}
+      label="Voice"
       bind:value={voice}
     />
   </div>
 
   <div class="grid-item">
-    <label for="purpose">Purpose:</label>
     <Select
       options={audiencePurposeOptions}
       display_func={(o) => o.text}
+      label="Purpose"
       bind:value={audiencePurpose}
     />
   </div>
@@ -95,8 +95,8 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-    border-bottom: 1px solid grey;
     gap: 10px;
+    border-bottom: 1px solid grey;
   }
 
   .grid-item {
@@ -104,10 +104,5 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 1em;
-  }
-
-  label {
-    margin-bottom: 0.5em;
-    font-weight: bold;
   }
 </style>

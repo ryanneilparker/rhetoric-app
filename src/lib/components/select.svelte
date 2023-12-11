@@ -1,7 +1,8 @@
 <script>
   export let options = [];
   export let display_func = (a) => a;
-  export let index = 0;
+  export let label = "";
+  export let index = null;
   export let value;
 
   $: {
@@ -10,6 +11,7 @@
 </script>
 
 <select bind:value={index}>
+  <option value={null} disabled selected hidden>{label}</option>
   {#each options as option, i}
     <option value={i}>{display_func(option)}</option>
   {/each}
