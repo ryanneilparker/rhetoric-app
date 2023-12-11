@@ -13,11 +13,16 @@
 
 <style>
   #preview {
-    padding: 1em 2em 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
   }
 
   .markdown {
-    overflow-y: auto;
-    max-height: 40em;
+    border: 1px solid grey;
+    height: 700px;
+    overflow-y: scroll;
+    padding: 0rem 4rem 0rem 4rem;
   }
 </style>

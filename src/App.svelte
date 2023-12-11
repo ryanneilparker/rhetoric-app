@@ -22,18 +22,23 @@
 
 <style>
   main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2em;
+    display: grid;
+    align-items: top;
+    justify-items: center;
+    height: 90vh;
+    width: 100vw;
+    margin: 2rem 0 0 0;
+    padding: 0;
   }
 
   #container {
-    border: 1px solid grey;
-    border-radius: 20px;
-    height: 90vh;
-    width: 80vw;
     display: grid;
     grid-template-rows: 1fr 8fr 1fr;
+    height: 80%;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+    border: 1px solid grey;
+    border-radius: 20px;
   }
 </style>

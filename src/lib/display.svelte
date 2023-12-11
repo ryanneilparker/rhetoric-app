@@ -15,6 +15,7 @@
 
 <style>
   #display {
+    height: 100%;
     display: grid;
     grid-template-columns: 4fr 1fr;
   }
