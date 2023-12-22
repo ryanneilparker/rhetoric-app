@@ -3,11 +3,11 @@
 </script>
 
 <section id="options">
-    <input type="button" value="Tone">
-    <input type="button" value="Structure">
-    <input type="button" value="Style">
-    <input type="button" value="Voice">
-    <input type="button" value="Purpose">
+    <button>Tone</button>
+    <button>Style</button>
+    <button>Structure</button>
+    <button>Voice</button>
+    <button>Purpose</button>
 </section>
 
 <style>
@@ -19,6 +19,6 @@
         padding: 1rem;
 
         /* debug */
-        border: 1px solid black;
+        border: 1px solid red;
     }
 </style>
