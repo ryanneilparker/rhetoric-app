@@ -2,12 +2,22 @@
     import Options from "../../components/options.svelte";
     import Prompter from "../../components/prompter.svelte";
     import Preview from "../../components/preview.svelte";
+
+    let generatedPayload = {};
+
+    function handlePayload(event) {
+        console.log('Handling payload...')
+
+        generatedPayload = event.detail;
+
+        // debug
+        console.log(generatedPayload);
+    }
 </script>
 
 <section id="editor">
-
     <Options />
-    <Prompter />
+    <Prompter on:payload={handlePayload}/>
     <Preview />
 </section>
 
