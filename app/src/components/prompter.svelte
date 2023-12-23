@@ -24,7 +24,9 @@
 
         console.log(payload);
 
-        dispatcher('payload', payload);
+        console.log('Dispatching payload generated event...')
+
+        dispatcher('payloadGenerated', payload);
     }
 </script>
 

@@ -9,15 +9,12 @@
         console.log('Handling payload...')
 
         generatedPayload = event.detail;
-
-        // debug
-        console.log(generatedPayload);
     }
 </script>
 
 <section id="editor">
     <Options />
-    <Prompter on:payload={handlePayload}/>
+    <Prompter on:payloadGenerated={handlePayload}/>
     <Preview />
 </section>
 
